@@ -2,7 +2,7 @@
 <view class="container">
   <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
+      <view class="userinfo-avatar">
         <open-data type="userAvatarUrl"></open-data>
       </view>
       <open-data type="userNickName"></open-data>
@@ -17,7 +17,13 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="usermotto" style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 80%;">
+    <view wx:for="{{canSelectList}}" style="padding: 10px; border-radius: 4px; {{index === selectIndex ? 'background-color: #fb1e1e;' : ''}}" >
+      {{item}}
+    </view>
   </view>
+  <button type="primary" bindtap="handleSelect">帮我选一个</button>
+
+  <view bindtap="handleHistory" style="margin-top: 20px;">历史记录</view>
+  
 </view>

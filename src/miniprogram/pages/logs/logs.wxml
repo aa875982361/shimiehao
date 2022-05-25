@@ -1,6 +1,6 @@
 <!--logs.wxml-->
 <view class="container log-list">
   <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log.date}}</text>
+    <text class="log-item">{{index + 1}}. {{log.date}} {{log.value}}</text>
   </block>
 </view>
