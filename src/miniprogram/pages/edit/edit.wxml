@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="usermotto" style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 80%;">
+    <view wx:for="{{canSelectList}}" style="padding: 10px; border-radius: 4px; {{index === selectIndex ? 'background-color: #fb1e1e;' : ''}}" >
+      {{item}}
+      <icon class="icon-small" type="cancel" size="23" bindtap="handleDelete" data-name="{{item}}"></icon>
+    </view>
+  </view>
+
+  <view style="width: 80%; margin-top: 10px;">
+    <input auto-focus class="weui-input" maxlength="10" placeholder="输入菜单名，最大输入长度为10"  value="{{addMenuName}}" bindinput="handleInput"/>
+    <button type="default" style="margin-top: 20px;" bindtap="handleAdd" disabled="{{!addMenuName}}">增加</button>
+  </view>
+</view>

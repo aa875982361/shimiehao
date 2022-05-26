@@ -17,6 +17,35 @@ Page({
     canSelectList: [] as string[], // 可选列表
     selectIndex: -1, // 选中的index
   },
+  onShareAppMessage(){
+    return {
+      title: "来看看今天吃什么"
+    }
+  },
+  onLoad() {
+    // @ts-ignore
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true
+      })
+    }
+    
+  },
+  onShow(){
+    // 读取缓存数据
+    let cacheCanSelectList: string[] = wx.getStorageSync(STORAGE_KEY.CAN_SELECT_LIST) || []
+    if(cacheCanSelectList.length === 0){
+      cacheCanSelectList = ["猪脚饭", "烧腊", "汤粉", "都城", "饭堂", "好山好水", "螺蛳粉"]
+      wx.setStorage({
+        key: STORAGE_KEY.CAN_SELECT_LIST,
+        data: cacheCanSelectList
+      })
+    }
+    // 默认值
+    this.setData({
+      canSelectList: cacheCanSelectList,
+    })
+  },
   // 帮我选一个按钮
   handleSelect(){
     const {canSelectList = []} = this.data
@@ -36,12 +65,19 @@ Page({
         content: `大吉大利，今天吃${canSelectList[randomIndex]}`,
         confirmText: "就它了",
         cancelText: "下次",
-        success: () => {
+        success: (res) => {
+          if(res?.cancel){
+            // 点击取消
+            return
+          }
           // 记录当天的选择
           this.recordSelectResult(canSelectList[randomIndex])
           this.setData({
             selectIndex: randomIndex
           })
+        },
+        fail: () => {
+
         }
       })
     }, randomTime)
@@ -68,25 +104,12 @@ Page({
       url: '../logs/logs',
     })
   },
-  onLoad() {
-    // @ts-ignore
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
-    // 读取缓存数据
-    let cacheCanSelectList: string[] = wx.getStorageSync(STORAGE_KEY.CAN_SELECT_LIST) || []
-    if(cacheCanSelectList.length === 0){
-      cacheCanSelectList = ["猪脚饭", "烧腊", "汤粉", "都城", "饭堂", "好山好水", "螺蛳粉"]
-      wx.setStorage({
-        key: STORAGE_KEY.CAN_SELECT_LIST,
-        data: cacheCanSelectList
-      })
-    }
-    // 默认值
-    this.setData({
-      canSelectList: cacheCanSelectList,
+  /**
+   * 点击编辑
+   */
+  handleEdit(){
+    wx.navigateTo({
+      url: '../edit/edit',
     })
   },
   getUserProfile() {

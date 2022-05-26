@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+  <view style="position: absolute;top: 20px; right: 20px;" bindtap="handleEdit">编辑</view>
   <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}">
       <view class="userinfo-avatar">
