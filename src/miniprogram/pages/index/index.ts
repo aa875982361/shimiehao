@@ -2,10 +2,6 @@
 
 import { STORAGE_KEY } from "../../global"
 
-// 获取应用实例
-const app = getApp<IAppOption>()
-
-
 Page({
   data: {
     motto: '',
