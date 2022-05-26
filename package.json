@@ -5,10 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "start": "gulp watch",
+    "restart": "gulp restart",
+    "build": "gulp build"
   },
   "devDependencies": {
     "@babel/register": "^7.17.7",
+    "@types/gulp": "^4.0.9",
+    "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.3",
     "gulp-esbuild": "^0.10.3",
