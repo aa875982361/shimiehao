@@ -1,0 +1,14 @@
+{
+  "distPagePath": "./dist-page",
+  "needGenPageList": [
+    {
+      "pageJsPath": "./dist/pages/edit/edit.js"
+    },
+    {
+      "pageJsPath": "./dist/pages/index/index.js"
+    },
+    {
+      "pageJsPath": "./dist/pages/logs/logs.js"
+    }
+  ]
+}
