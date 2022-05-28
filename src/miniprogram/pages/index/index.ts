@@ -19,13 +19,25 @@ Page({
     }
   },
   onLoad() {
+    
+    let newData = {}
+    const userInfo = wx.getStorageSync(STORAGE_KEY.USER_INFO)
+    if(userInfo){
+      newData = {
+        hasUserInfo: true,
+        userInfo,
+      }
+    }
     // @ts-ignore
     if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
+      newData = {
+        ...newData,
+        canIUseGetUserProfile: true,
+      }
     }
+    console.log("newData", newData);
     
+    this.setData(newData)
   },
   onShow(){
     // 读取缓存数据
@@ -117,6 +129,11 @@ Page({
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
+        })
+        // 存储用户信息
+        wx.setStorage({
+          key: STORAGE_KEY.USER_INFO,
+          data: res.userInfo
         })
       }
     })
