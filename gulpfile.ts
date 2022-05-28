@@ -3,6 +3,7 @@ import gulpEsbuild from "gulp-esbuild"
 import * as gulp from "gulp"
 import path from "path"
 const lessCompiler = require("gulp-less")
+const LessCleanCss = require("less-plugin-clean-css")
 const changed = require("gulp-changed")
 const replace = require("gulp-replace")
 const rename = require("gulp-rename")
@@ -28,6 +29,9 @@ const srcCopyList = [
     `${srcDir}/**/*.+(js|wxss|json|wxs|wxml)`,
     `${srcDir}/**/*.+(png|gif|jpeg|jpg)`,
 ]
+const cleanCss = new LessCleanCss()
+
+// --------------------------   下面是任务
 /**
  * 使用esbuild 编译ts文件
  * @returns 
@@ -54,6 +58,9 @@ const less = (): any => {
     .pipe(changed(distDir, { extension: ".wxss" }))
     // 引用公共变量
     .pipe(lessCompiler({
+        plugin: [
+            cleanCss
+        ],
         globalVars: {
         },
     }))
