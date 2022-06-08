@@ -83,19 +83,29 @@ Page({
    */
   handleDelete(event: any){
     console.log("event", event);
-    // 需要删除的菜单名
-    const menuName = event?.currentTarget?.dataset?.name || ""
-    const {canSelectList = []} = this.data
-    const menuIndex = canSelectList.indexOf(menuName)
-    if(menuIndex === -1){
-      return
-    }
-    const newList = canSelectList.slice()
-    newList.splice(menuIndex, 1)
-    this.setData({
-      canSelectList: newList
+    wx.showModal({
+      title: "确认删除么？",
+      content: "删除后无法恢复",
+      success: (res) => {
+        // 不是点击确定 都不处理
+        if(!res.confirm){
+          return
+        }
+        // 需要删除的菜单名
+        const menuName = event?.currentTarget?.dataset?.name || ""
+        const {canSelectList = []} = this.data
+        const menuIndex = canSelectList.indexOf(menuName)
+        if(menuIndex === -1){
+          return
+        }
+        const newList = canSelectList.slice()
+        newList.splice(menuIndex, 1)
+        this.setData({
+          canSelectList: newList
+        })
+        this.saveCanSelectList()
+      }
     })
-    this.saveCanSelectList()
   },
   /**
    * 处理输入的菜单名
