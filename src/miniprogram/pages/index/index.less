@@ -22,29 +22,37 @@
 .star-five{
   width: 0;
   height: 0;
-  color: red;
-  margin: 50rpx 0;
+  color: #20aceb;
+  margin: 10rpx 0;
   position: relative;
   display: block;
-  border-left: 100rpx solid transparent;
-  border-right: 100rpx solid transparent;
-  border-bottom: 70rpx solid red;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 14rpx solid #20aceb;
   -moz-transfrom:rotate(35deg);
   -webkit-transform:rotate(35deg);
   -ms-transform:rotate(35deg);
   -o-transform:rotate(35deg);
+
+  &.abs {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
+
   
   
 .star-five:before{
   width: 0;
   height: 0;
-  border-left: 30rpx solid transparent;
-  border-right: 30rpx solid transparent;
-  border-bottom: 80rpx solid red;
+  border-left: 6rpx solid transparent;
+  border-right: 6rpx solid transparent;
+  border-bottom: 16rpx solid #20aceb;
   position: absolute;
-  top: -45rpx;
-  left: -65rpx;
+  top: -9rpx;
+  left: -13rpx;
   color: white;
   display: block;
   content: "";
@@ -58,12 +66,12 @@
   height: 0;
   display: block;
   position: absolute;
-  color: red;
-  top: 3rpx;
-  left: -105rpx;
-  border-left: 100rpx solid transparent;
-  border-right: 100rpx solid transparent;
-  border-bottom: 70rpx solid red;
+  color: #20aceb;
+  top: 1rpx;
+  left: -21rpx;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 14rpx solid #20aceb;
   content: "";
   -moz-transform:rotate(-70deg);
   -webkit-transform:rotate(-70deg);

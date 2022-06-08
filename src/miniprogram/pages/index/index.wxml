@@ -19,8 +19,8 @@
     </block>
   </view>
   <view class="usermotto" style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 80%;">
-    <view wx:for="{{canSelectList}}" style="padding: 10px; border-radius: 4px; {{index === selectIndex ? 'background-color: #fb1e1e;' : ''}}" >
-      {{item}}
+    <view wx:for="{{canSelectList}}" style="padding: 10px; border-radius: 4px;position: relative;" >
+      {{item}}<view wx:if="{{index === selectIndex}}" class="star-five abs"></view>
     </view>
   </view>
   <button type="primary" bindtap="handleSelect">帮我选一个</button>
