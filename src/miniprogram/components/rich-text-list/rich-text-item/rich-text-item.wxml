@@ -1,0 +1,21 @@
+
+<view >我是item</view>
+
+<view wx:if="{{item.type === 'text'}}">
+    <textarea
+        cursor-spacing="100"
+        placeholder="请输入"
+        placeholder-class="placeHolderText"
+        class="publishDetail"
+        show-confirm-bar="{{false}}"
+        maxlength="-1"
+        bindinput="handleTextInput"
+        value="{{item.value || ''}}"
+      ></textarea>
+</view>
+
+<view wx:elif="{{item.type === 'img'}}">
+    <upload-img
+        bind:uploadSuccess="handleUploadSuccess"
+    ></upload-img>
+</view>

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "rich-text-item": "./rich-text-item/rich-text-item"
+  }
+}

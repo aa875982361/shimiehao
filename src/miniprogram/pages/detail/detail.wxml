@@ -1,0 +1,114 @@
+<view class="flex-col page">
+  <view class="flex-col group">
+    <view class="flex-row group_2">
+      <text class="font_2 text">单元格单元格单元格单元格…</text>
+      <text class="font_3 text_2">内容内容内容内容内</text>
+      <view class="section"></view>
+      <view class="section_2"></view>
+      <image
+        class="image"
+        src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749363134865.png"
+      />
+      <view class="flex-col items-center text-wrapper"><text class="font_1">12pt</text></view>
+    </view>
+    <view class="section_3"></view>
+    <view class="section_4"></view>
+    <view class="section_5"></view>
+  </view>
+  <view class="flex-row group_3">
+    <text class="font_2 text_3">单元格</text>
+    <view class="flex-col items-start group_6">
+      <text class="text_5">描述信息描述信息描述信息</text>
+      <view class="section_10"></view>
+    </view>
+    <view class="flex-row group_4">
+      <view class="section_8"></view>
+      <view class="section_8 view"></view>
+      <view class="section_9"></view>
+      <view class="flex-col group_5">
+        <text class="font_3 text_4">内容</text>
+        <view class="section_7"></view>
+      </view>
+    </view>
+    <view class="section_6"></view>
+    <image
+      class="image_2"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749363134865.png"
+    />
+    <view class="flex-col items-center text-wrapper_2"><text class="font_1">12pt</text></view>
+  </view>
+  <view class="flex-col group_7">
+    <view class="flex-col space-y-12 group_8">
+      <view class="flex-col section_11">
+        <view class="divider view_2"></view>
+        <view class="flex-row justify-between group_9">
+          <text class="font_3">单元格</text>
+          <text class="font_2 text_6">内容</text>
+        </view>
+      </view>
+      <image
+        class="image_3"
+        src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/44623326042f77e55e778fc865f16eb3.png"
+      />
+    </view>
+    <view class="flex-col space-y-12">
+      <view class="flex-col section_11">
+        <view class="divider view_3"></view>
+        <view class="flex-row justify-between group_9">
+          <text class="font_3">单元格</text>
+          <text class="font_2 text_7">内容</text>
+        </view>
+      </view>
+      <image
+        class="image_3"
+        src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/44623326042f77e55e778fc865f16eb3.png"
+      />
+    </view>
+  </view>
+  <view class="flex-row space-x-10 group_10">
+    <text class="font_4 text_8">口感评分：</text>
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+  </view>
+  <view class="flex-row space-x-10 group_11">
+    <text class="font_4 text_9">难度评分：</text>
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+    <image
+      class="image_4"
+      src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654146749382256992.png"
+    />
+  </view>
+</view>

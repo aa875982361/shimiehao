@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "rich-text-list": "/components/rich-text-list/rich-text-list"
+  }
+}

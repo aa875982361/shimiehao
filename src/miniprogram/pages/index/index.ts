@@ -90,6 +90,22 @@ Page({
       })
     }, randomTime)
   },
+
+  handleOpenMini(){
+    if(!(wx as any).openEmbeddedMiniProgram){
+      return
+    }
+    (wx as any).openEmbeddedMiniProgram({
+      appId: "wx7d1304df49306ae4",
+      path: "pro/pages/seq-detail/detail-mutual-sale-parent/detail-mutual-sale-parent?actId=2207290234316920&leaderGroupId=Ps7P8Lv_bsTlSvH_e94951a1",
+      success: (res: any) => {
+        console.log("openEmbeddedMiniProgram success", res);
+      },
+      fail: (err: any) => {
+        console.log("openEmbeddedMiniProgram error", err);
+      }
+    })
+  },
   /**
    * 记录当天选择的内容
    * @param selectValue

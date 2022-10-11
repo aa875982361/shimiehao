@@ -1,0 +1,63 @@
+@import(reference) "../../app.less";
+
+.space-x-16 {
+  & > view:not(:first-child),
+  & > text:not(:first-child),
+  & > image:not(:first-child) {
+    margin-left: 32rpx;
+  }
+  .image {
+    flex-shrink: 0;
+    border-radius: 8rpx;
+    width: 176rpx;
+    height: 176rpx;
+  }
+  .group {
+    margin-top: 12rpx;
+    flex: 1 1 auto;
+    .text {
+      align-self: flex-start;
+      color: #333333;
+      font-size: 34rpx;
+      font-family: SourceHanSansCN;
+      line-height: 32rpx;
+    }
+    .font_1 {
+      font-size: 28rpx;
+      font-family: SourceHanSansCN;
+      line-height: 21rpx;
+      color: #030303;
+    }
+    .text_2 {
+      opacity: 0.4;
+    }
+    .text_3 {
+      margin-top: 24rpx;
+      line-height: 27rpx;
+    }
+    .group_2 {
+      margin-top: 56rpx;
+      .image_2 {
+        margin-right: 12rpx;
+        margin-bottom: 4rpx;
+        width: 24rpx;
+        height: 20rpx;
+      }
+      .text_4 {
+        margin-right: 28rpx;
+      }
+      .image_3 {
+        margin-right: 12rpx;
+        align-self: center;
+        width: 28rpx;
+        height: 18rpx;
+      }
+    }
+  }
+}
+.page {
+  padding: 24rpx 24rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0px 4rpx 12rpx #0000000f;
+}

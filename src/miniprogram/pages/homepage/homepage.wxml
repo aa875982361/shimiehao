@@ -1,0 +1,8 @@
+<view class="flex-col space-y-49 page">
+  <view class="flex-row justify-center space-x-5 section">
+    <text class="font_1 text" bind:tap="handlePublish">发布菜单</text>
+  </view>
+  <view class="flex-col list">
+    <menuitem wx:key="*this" wx:for-item="item" wx:for-index="i" wx:for="{{list_F3uGuZJH}}" />
+  </view>
+</view>

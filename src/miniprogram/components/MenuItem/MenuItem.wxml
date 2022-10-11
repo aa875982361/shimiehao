@@ -1,0 +1,19 @@
+<view class="flex-row space-x-16 page">
+  <image class="image" src="{{menuImg}}" />
+  <view class="flex-col group">
+    <text class="text">{{title}}</text>
+    <text class="font_1 text_2 text_3">{{desc}}</text>
+    <view class="flex-row justify-end group_2">
+      <image
+        class="image_2"
+        src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654144900584710779.png"
+      />
+      <text class="font_1 text_2 text_4">{{likeNum}}</text>
+      <image
+        class="image_3"
+        src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/62c4f89c5a7e3f03107075f2/63443551f9b4a40011d86076/16654144900560858833.png"
+      />
+      <text class="font_1 text_2">{{viewNum}}</text>
+    </view>
+  </view>
+</view>

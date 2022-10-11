@@ -24,6 +24,7 @@
     </view>
   </view>
   <button type="primary" bindtap="handleSelect">帮我选一个</button>
+  <button bindtap="handleOpenMini">打开半屏小程序</button>
 
   <view bindtap="handleHistory" style="margin-top: 20px;">历史记录</view>
   

@@ -1,0 +1,9 @@
+<view class="flex-col">
+  <view class="flex-row">
+    <input placeholder="请输入标题"></input>
+  </view>
+</view>
+
+<rich-text-list list="{{richTextList}}"></rich-text-list>
+
+<button type="primry">发布</button>
