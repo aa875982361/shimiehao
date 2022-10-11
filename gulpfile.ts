@@ -66,7 +66,7 @@ const less = (): any => {
     }))
     // .pipe(header(`@import (reference) "${srcDir}/styles/weui.wxss";\n`))
     // 改引用路径后缀
-    .pipe(replace(/@import\s*['"](.*)\.\s*less\s*['"]\s*;/g, "@import '$1.wxss';"))
+    .pipe(replace(/@import\s*(?:.*?)['"](.*)\.\s*less\s*['"]\s*;/g, "@import '$1.wxss';"))
     // 改文件后缀
     .pipe(rename({ extname: ".wxss" }))
     .pipe(gulp.dest(distDir))
