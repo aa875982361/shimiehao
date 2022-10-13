@@ -37,5 +37,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.10.5"
+  }
 }
