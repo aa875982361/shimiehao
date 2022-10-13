@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "MenuItem": "../../components/MenuItem/MenuItem"
+    "MenuItem": "/components/MenuItem/MenuItem"
   }
 }
