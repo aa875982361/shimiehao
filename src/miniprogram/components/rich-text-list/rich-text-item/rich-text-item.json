@@ -1,6 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "upload-img": "../../upload-img/upload-img"
+    "upload-img": "/vant-components/uploader/index",
+    "van-row": "/vant-components/row/index",
+    "van-col": "/vant-components/col/index"
   }
 }

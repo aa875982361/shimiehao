@@ -1,5 +1,4 @@
 
-<view >我是item</view>
 
 <view wx:if="{{item.type === 'text'}}">
     <textarea
@@ -14,8 +13,16 @@
       ></textarea>
 </view>
 
-<view wx:elif="{{item.type === 'img'}}">
+<view wx:elif="{{item.type === 'singleImg'}}">
     <upload-img
-        bind:uploadSuccess="handleUploadSuccess"
+        file-list="{{ imgUrlList }}"
+        bind:after-read="afterRead"
+        max-count="1"
     ></upload-img>
 </view>
+
+<van-row gutter="20">
+  <van-col offset="4" span="8" bind:tap="handleAdd" data-type="text">增加文字</van-col>
+  <van-col offset="4"span="8" bind:tap="handleAdd" data-type="singleImg">增加图片</van-col>
+
+</van-row>
