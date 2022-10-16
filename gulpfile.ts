@@ -8,7 +8,12 @@ const changed = require("gulp-changed")
 const replace = require("gulp-replace")
 const rename = require("gulp-rename")
 const del = require("del")
+// const alias = require('esbuild-plugin-alias');
+// const PathAliasPlugin = require('esbuild-plugin-path-alias')
 // const header = require("gulp-header")
+// import TsconfigPathsPlugin from "@esbuild-plugins/tsconfig-paths"
+// console.log("@core path", path.resolve(__dirname, "./src/miniprogram/core"))
+const tsPaths = require("esbuild-ts-paths") 
 
 interface WatchOpts extends gulp.WatchOptions {
     /** @types/gulp 没有更新这个属性 */
@@ -21,7 +26,7 @@ const srcDir = "src/miniprogram"
 /** 目标文件夹 */
 const distDir = "dist"
 /** 需要编译的ts */
-const tsList = [`${srcDir}/**/*.ts`]
+const tsList = [`${srcDir}/**/*.ts`, `!${srcDir}/vant-components/**/*.ts`]
 /** 需要编译的less */
 const lessList = [`${srcDir}/**/*.less`]
 /** 无需编译，仅复制的文件 */
@@ -30,6 +35,9 @@ const srcCopyList = [
     `${srcDir}/**/*.+(png|gif|jpeg|jpg)`,
 ]
 const cleanCss = new LessCleanCss()
+// const tsconfig = require("./src/tsconfig.json")
+// console.log("tsconfig", tsconfig);
+
 
 // --------------------------   下面是任务
 /**
@@ -46,6 +54,21 @@ const esbuild = function(){
             },
             format: 'cjs',
             tsconfig: './tsconfig.json',
+            plugins: [
+                // TsconfigPathsPlugin({
+                //     tsconfig: {
+                //         compilerOptions: {
+                //             paths: {
+                //                 "@core/*": [path.join(__dirname, "./src/miniprogram/core/*")],
+                //                 "miniprogram/*": [path.join(__dirname, "./src/miniprogram/*")],
+                //             }
+                //         }
+                //     },
+                // }),
+                tsPaths(
+                    "./tsconfig.json" // optional, defaults to ./tsconfig.json
+                )
+            ],
         }))
         .pipe(gulp.dest('./dist'))
 }
@@ -108,9 +131,9 @@ exports.clean = clean
  */
 const defaultTask = gulp.series(
     // clean,
-    copy,
+    // copy,
     esbuild,
-    less
+    // less
 )
   
 exports.default = defaultTask
