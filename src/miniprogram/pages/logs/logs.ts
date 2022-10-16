@@ -22,7 +22,7 @@ Page({
     })
     console.log("logs", logs);
     
-    this.setData({
+    (this as any).setData({
       logs,
     })
   },

@@ -25,7 +25,7 @@ Page({
       })
     }
     // 默认值
-    this.setData({
+    (this as any).setData({
       canSelectList: cacheCanSelectList,
     })
   },
@@ -71,13 +71,6 @@ Page({
   onReachBottom() {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
   /**
    * 处理删除
    */
@@ -99,11 +92,11 @@ Page({
           return
         }
         const newList = canSelectList.slice()
-        newList.splice(menuIndex, 1)
-        this.setData({
+        newList.splice(menuIndex, 1);
+        (this as any).setData({
           canSelectList: newList
-        })
-        this.saveCanSelectList()
+        });
+        (this as any).saveCanSelectList()
       }
     })
   },
@@ -113,15 +106,15 @@ Page({
    */
   handleInput(event: any){
     console.log("event", event?.detail?.value);
-    const value = event?.detail?.value
-    this.setData({
-      addMenuName: value
+    const value25 = event?.detail?.value;
+    (this as any).setData({
+      addMenuName: value25
     })
   },
   /**
    * 点击增加
    */
-  handleAdd(){
+  handleAdd(): void{
     const { addMenuName = "", canSelectList = [] } = this.data
     // 检查是否存在
     const index = canSelectList.indexOf(addMenuName)
@@ -132,12 +125,12 @@ Page({
       })
       return
     }
-    canSelectList.push(addMenuName)
-    this.setData({
+    canSelectList.push(addMenuName);
+    (this as any).setData({
       canSelectList,
       addMenuName: "",
-    })
-    this.saveCanSelectList()
+    });
+    (this as any).saveCanSelectList()
   },
   saveCanSelectList(){
     const { canSelectList = [] } = this.data

@@ -37,7 +37,7 @@ Page({
     }
     console.log("newData", newData);
     
-    this.setData(newData)
+    (this as any).setData(newData)
   },
   onShow(){
     // 读取缓存数据
@@ -50,17 +50,17 @@ Page({
       })
     }
     // 默认值
-    this.setData({
+    (this as any).setData({
       canSelectList: cacheCanSelectList,
     })
   },
   // 帮我选一个按钮
   handleSelect(){
-    const {canSelectList = []} = this.data
+    const {canSelectList = []} = this.data as any
     const length = canSelectList.length
     const randomIndex = (Math.random() * length) >> 0
-    const randomTime = 500 + (Math.random() * 2000) >> 0
-    this.setData({
+    const randomTime = 500 + (Math.random() * 2000) >> 0;
+    (this as any).setData({
       selectIndex: -1,
     })
     wx.showLoading({
@@ -79,8 +79,8 @@ Page({
             return
           }
           // 记录当天的选择
-          this.recordSelectResult(canSelectList[randomIndex])
-          this.setData({
+          (this as any).recordSelectResult(canSelectList[randomIndex]);
+          (this as any).setData({
             selectIndex: randomIndex
           })
         },
@@ -141,8 +141,8 @@ Page({
     wx.getUserProfile({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        console.log(res)
-        this.setData({
+        console.log(res);
+        (this as any).setData({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
@@ -156,8 +156,8 @@ Page({
   },
   getUserInfo(e: any) {
     // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
+    console.log(e);
+    (this as any).setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
