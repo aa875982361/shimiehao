@@ -6,13 +6,14 @@ Component({
         }
     },
     data: {
+        list: []
     },
     methods: {
         // 增加一个节点
         handleAddItem(event: WXEvent){
             const {index, type, value} = event.detail
             console.log("handleAddItem", event);
-            const newList = this.data.list.slice()
+            const newList = (this.data as any).list.slice()
 
             newList.splice(index+1, 0, {
                 type,
