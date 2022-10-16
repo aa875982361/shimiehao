@@ -1,32 +1,43 @@
 {
     "compilerOptions": {
+        "baseUrl": "./",
         "outDir": "./dist/",
-        "strictNullChecks": true,
-        "noImplicitAny": true,
-        "module": "CommonJS",
-        "target": "ES2020",
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "experimentalDecorators": true,
-        "noImplicitThis": true,
-        "noImplicitReturns": true,
-        "alwaysStrict": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
         "strict": true,
-        "strictPropertyInitialization": true,
-        "lib": ["ES2020"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "removeComments": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "downlevelIteration": true,
+        "module": "commonjs",
+        "target": "es2020",
+        "lib": [
+          "es2017",
+          "ES2020",
+          "DOM"
+        ],
+        "paths": {
+          "@core/*": ["./src/miniprogram/core/*"],
+          "*": ["types/*"],
+        },
+        "types": [
+          "./src/typings"
+        ],
         "typeRoots": [
-            "./src/typings"
+          "./src/typings"
         ]
     },
     "include": [
-      "./src/**/*.ts"
+      "./src/**/*.ts",
     ],
     "exclude": [
-      "node_modules"
+      "node_modules",
+      "src/typings/**/*.ts"
     ]
   }
   
