@@ -43,11 +43,12 @@ module.exports = {
             },
           },
           {
+            loader: resolve(__dirname, './loader/change-import-less.js'),
+          },
+          {
             loader: 'less-loader',
             options: {
-              lessOptions: {
-                strictMath: true,
-              },
+              webpackImporter: false,
             },
           }
         ],
