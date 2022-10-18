@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "baseUrl": "./",
         "outDir": "./dist/",
         "strict": true,
         "skipLibCheck": true,
@@ -22,8 +21,7 @@
           "DOM"
         ],
         "paths": {
-          "@core/*": ["./src/miniprogram/core/*"],
-          "*": ["types/*"],
+          "@core/*": ["./src/miniprogram/core/*"]
         },
         "types": [
           "./src/typings"
