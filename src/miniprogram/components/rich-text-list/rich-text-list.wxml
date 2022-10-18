@@ -1,5 +1,5 @@
 <view >
-    <block wx:for="{{list}}">
-        <rich-text-item item="{{item}}" index="{{index}}" bind:addItem="handleAddItem"></rich-text-item>
+    <block wx:for="{{list}}" wx:key="key">
+        <rich-text-item item="{{item}}" index="{{index}}" bind:addItem="handleAddItem" bind:changeVale="changeItemValue"></rich-text-item>
     </block>
 </view>

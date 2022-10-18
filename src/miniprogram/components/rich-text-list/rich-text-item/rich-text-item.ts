@@ -1,5 +1,6 @@
 import { wxComponent } from "@core/amini/core"
 import { getComponentData, SuperComponent } from "@core/classes/SuperComponent"
+import { formatDate } from "../../../utils/util"
 
 interface IImgConfig {
     type: string,
@@ -58,24 +59,36 @@ export class RichTextItem extends SuperComponent<IData> implements Component.Com
         }
     }
     // 文本输入
-    public handleTextInput(e: WXEvent){
-        // const { index } = this.data
-        // // 原有值不变 通知外层值修改
-        // this.triggerEvent("changeVale", {
-        //     index,
-        //     value: e.detail.value
-        // })
+    public handleTextInput(e: WXEvent): void{
+        
+        // 原有值不变 通知外层值修改
+        this.noticeChange(e.detail.value)
+    }
+    public noticeChange(value: string): void {
+        const { index } = this.data
+        this.triggerEvent("changeVale", {
+            index,
+            value,
+        })
     }
     /** 选择完图片的回调 */
-    afterRead(event: WXEvent) {
+    public afterRead(event: WXEvent) {
         const { file } = event.detail;
         console.log("event", event)
+
+        const fileName = file.url.substring(file.url.lastIndexOf('.') + 1)
+        const timeStamp = new Date()
+        const randomTime = (Math.random() * 10000) >> 0
+        const cloudPath = `up/${formatDate(timeStamp)}/${(+timeStamp).toString(36)}/${randomTime.toString(36)}.${fileName}`
+        console.log("cloudPath", cloudPath);
+        
         wx.cloud.uploadFile({
-            cloudPath: 'example.png', // 上传至云端的路径
+            cloudPath, // 上传至云端的路径
             filePath: file.url, // 小程序临时文件路径
             success: (res) => {
                 // 返回文件 ID
-                console.log("fileID", res.fileID)
+                console.log("fileID", res)
+                this.noticeChange(res.fileID)
                 this.setData({
                     imgUrlList: [{
                         ...file,

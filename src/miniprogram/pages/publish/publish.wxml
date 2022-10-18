@@ -1,9 +1,9 @@
 <view class="flex-col">
   <view class="flex-row">
-    <input placeholder="请输入标题"></input>
+    <input placeholder="请输入标题" value="{{title}}" bindinput="handleTitleInput"></input>
   </view>
 </view>
 
-<rich-text-list list="{{richTextList}}"></rich-text-list>
+<rich-text-list list="{{richTextList}}" bind:changeRichTextList="handleRichTextListChange"></rich-text-list>
 
 <button type="primry">发布</button>
