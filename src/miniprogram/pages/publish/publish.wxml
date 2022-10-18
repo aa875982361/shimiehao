@@ -6,4 +6,4 @@
 
 <rich-text-list list="{{richTextList}}" bind:changeRichTextList="handleRichTextListChange"></rich-text-list>
 
-<button type="primry">发布</button>
+<button type="primry" bind:tap="handlePublish">发布</button>

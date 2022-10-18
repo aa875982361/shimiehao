@@ -6,7 +6,7 @@ interface IImgConfig {
     url: string,
 }
 
-interface IRichText {
+export interface IRichText {
     type: string,
     value: string,
     key?: string

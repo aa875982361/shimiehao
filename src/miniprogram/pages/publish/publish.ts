@@ -1,5 +1,31 @@
-Page({
-  data: {
+import { wxPage } from "@core/amini/core"
+import { SuperPage, IBasePageData } from "@core/classes/SuperPage"
+import { IRichText } from "../../components/rich-text-list/rich-text-list"
+
+/** onload 参数, 所有都是string */
+interface ILoadParams {
+  groupId?: string
+}
+
+/** 页面数据 */
+interface IData extends IBasePageData {
+  // 富文本列表
+  richTextList: IRichText[],
+  title: string
+}
+
+type LoadParams = Record<keyof ILoadParams, string>
+
+/**
+ * ___describe___
+ *
+ * @class PurePagerWrapper
+ * @extends {SuperSetData<IPageDate>}
+ * @implements {PageOpts}
+ */
+@wxPage()
+class PurePagerWrapper extends SuperPage<IData> implements Page.PageInstance<IData> {
+  public data = {
     // 富文本列表
     richTextList: [
       {
@@ -12,30 +38,51 @@ Page({
       }
     ],
     title: ""
-  },
+  } as IData
+
+  constructor() {
+    super()
+  }
+
+  /** DELETE: 注意，onLoad onShow onReady onHide onUnload 都要在第一行调用 super.onXX */
+
+  public onLoad(options: LoadParams): void {
+    super.onLoad(options)
+  }
+
+  public onShow(): void {
+    super.onShow()
+  }
+
   /**
    * 处理标题值输入的值变化
    * @param event 
    */
-  handleTitleInput(event:WXEvent): void {
+   public handleTitleInput(event:WXEvent): void {
     const value = event.detail.value;
     (this as any).setData({
       title: value
     })
-  },
+  }
   /**
    * 处理富文本组件的值变化
    * @param event 
    */
-  handleRichTextListChange(event:WXEvent): void{
+  public handleRichTextListChange(event:WXEvent): void{
     console.log("publish handleRichTextListChange", event);
     const { list = [] } = event.detail;
     (this as any).setData({
       richTextList: list
     })
     
-  },
-  onShareAppMessage() {
-    return {};
-  },
-});
+  }
+
+  /**
+   * 点击发布按钮
+   * @param event 
+   */
+  public handlePublish(event: WXEvent): void {
+    
+  }
+
+}
