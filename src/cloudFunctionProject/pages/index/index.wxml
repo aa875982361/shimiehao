@@ -1,0 +1,7 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="horizontal-center sub-text">云函数项目</view>
+  <view class="marginTop">
+    注意事项⚠️：
+  </view>
+</view>

@@ -1,0 +1,13 @@
+/** 小程序云函数服务模板，用于根据 云函数服务端代码 生成客户端调用函数 */
+import { MonoRxCloudService, IMonoCloudOptions } from "../services/mono-rx-cloud.service"
+import { Injectable } from "@angular/core"
+import { Observable } from "rxjs"
+/** @slot importStatements */
+@Injectable()
+export class WxCloudApiService {
+  constructor(
+    protected rxCloudService: MonoRxCloudService,
+  ) {}
+/** @slot methods */
+
+}

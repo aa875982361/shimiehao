@@ -1,0 +1,19 @@
+/* pages/index/index.wxss */
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+.sub-text {
+  color: #888;
+}
+.container {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.marginTop {
+  margin-top: 40px;
+}

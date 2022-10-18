@@ -21,7 +21,8 @@
           "DOM"
         ],
         "paths": {
-          "@core/*": ["./src/miniprogram/core/*"]
+          "@core/*": ["./src/miniprogram/core/*"],
+          "@mono-shared/*": ["./src/mono-shared/src/*"]
         },
         "types": [
           "./src/typings"

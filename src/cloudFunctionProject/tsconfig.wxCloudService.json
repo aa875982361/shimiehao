@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "strict": false,
+    "noImplicitUseStrict": true,
+    "baseUrl": "./",
+    "target": "ES2017",
+    "moduleResolution": "Node",
+    "module": "CommonJS",
+    "noEmitHelpers": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@mono-shared/*": ["../mono-shared/src/*"]
+    },
+    "typeRoots": [
+    ]
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "../node_modules"
+  ]
+}
+
