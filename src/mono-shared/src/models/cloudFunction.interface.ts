@@ -20,6 +20,25 @@ export interface ICloudResponse<T> {
     version?: number
 }
 
+export interface ICloudCache<T> {
+    funcName: string
+    data: T
+    params: any
+    cloudUpdateTime: number
+    timeStamp: number
+    expireMilliseconds?: number
+}
+
+export interface ICloudUpdateTimes {
+    [name: string]: number
+  }
+  
+
+export interface ICloudErrorRes extends ICloudResponse<any> {
+    error?: Error
+    isSkipReport?: boolean
+  }
+
 export interface IExampleRequest {
     requestData: string
 }

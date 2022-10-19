@@ -20,15 +20,24 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
-        "@core": resolve(__dirname, './src/miniprogram/core')
+        "@core": resolve(__dirname, './src/miniprogram/core'),
+        "@mono-shared": resolve(__dirname, './src/mono-shared/src')
     }
   },
   module: {
     rules: [
       {
-        test: /src\/miniprogram\/(.*)\.(ts)x?$/,
+        test: /src\/(.*)\.(ts)x?$/,
         exclude: /node_modules/,
-        use: 'ts-loader',
+        use: {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            experimentalWatchApi: true,
+            onlyCompileBundledFiles: true,
+          },
+        },
+        
       },
       {
         test: /\.(less)$/,
