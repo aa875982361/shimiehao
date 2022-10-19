@@ -2,12 +2,16 @@
 import { MonoRxCloudService, IMonoCloudOptions } from "./mono-rx-cloud.service"
 import { Injectable } from "@core/amini/core"
 import { Observable } from "rxjs"
-/** @slot importStatements */
+import { ICloudResponse, IExampleRequest, IExampleResponse } from "../models/cloudFunction.interface"
+
 @Injectable()
 export class WxCloudApiService {
   constructor(
     protected rxCloudService: MonoRxCloudService,
   ) {}
-/** @slot methods */
+
+  public example(data: IExampleRequest, options?: IMonoCloudOptions<IExampleResponse>): Observable<ICloudResponse<IExampleResponse>> {
+    return this.rxCloudService.rxCloud("example", data, options)
+  }
 
 }

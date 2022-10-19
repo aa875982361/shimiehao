@@ -33,6 +33,7 @@
     },
     "include": [
       "./src/**/*.ts",
+      "./script/**/*.ts"
     ],
     "exclude": [
       "node_modules",

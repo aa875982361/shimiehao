@@ -1,25 +1,18 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "strict": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "removeComments": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "outDir": "cloudfunctions",
+    "strict": false,
+    "noImplicitUseStrict": true,
+    "target": "ES2017",
+    "moduleResolution": "Node",
+    "module": "CommonJS",
     "noEmitHelpers": true,
-    "importHelpers": true,
-    "downlevelIteration": true,
-    "module": "commonjs",
-    "target": "es2020",
-    "lib": [
-      "es2017",
-      "ES2020",
-      "DOM"
-    ],
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "rootDir": "../",
+    "declaration": true,
     "paths": {
       "@mono-shared/*": ["../mono-shared/src/*"]
     },
