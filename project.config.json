@@ -5,6 +5,7 @@
     "include": []
   },
   "miniprogramRoot": "dist/",
+  "cloudfunctionRoot": "src/cloudFunctionProject/cloudfunctions/",
   "compileType": "miniprogram",
   "projectname": "食咩啊",
   "setting": {
@@ -45,5 +46,6 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }

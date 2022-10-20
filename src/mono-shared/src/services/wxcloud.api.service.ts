@@ -2,7 +2,7 @@
 import { MonoRxCloudService, IMonoCloudOptions } from "./mono-rx-cloud.service"
 import { Injectable } from "@core/amini/core"
 import { Observable } from "rxjs"
-import { ICloudResponse, IExampleRequest, IExampleResponse, ICloudUpdateTimes } from "../models/cloudFunction.interface"
+import { ICloudResponse, ICloudUpdateTimes, ISaveMenuParam, ISaveMenuRes, IExampleRequest, IExampleResponse } from "../models/cloudFunction.interface"
 
 @Injectable()
 export class WxCloudApiService {
@@ -10,12 +10,16 @@ export class WxCloudApiService {
     protected rxCloudService: MonoRxCloudService,
   ) {}
 
-  public example(data: IExampleRequest, options?: IMonoCloudOptions<IExampleResponse>): Observable<ICloudResponse<IExampleResponse>> {
-    return this.rxCloudService.rxCloud("example", data, options)
-  }
-
   public getLatestUpdateTimes(data: any, options?: IMonoCloudOptions<any>): Observable<any> {
     return this.rxCloudService.rxCloud("getLatestUpdateTimes", data, options)
+  }
+
+  public saveMenu(data: ISaveMenuParam, options?: IMonoCloudOptions<ISaveMenuRes>): Observable<ICloudResponse<ISaveMenuRes>> {
+    return this.rxCloudService.rxCloud("saveMenu", data, options)
+  }
+
+  public example(data: IExampleRequest, options?: IMonoCloudOptions<IExampleResponse>): Observable<ICloudResponse<IExampleResponse>> {
+    return this.rxCloudService.rxCloud("example", data, options)
   }
 
 }

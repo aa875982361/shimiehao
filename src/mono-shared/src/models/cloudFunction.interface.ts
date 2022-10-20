@@ -46,3 +46,20 @@ export interface IExampleRequest {
 export interface IExampleResponse {
     responseData: string
 }
+
+/** 保存菜单 */
+
+export interface IRichText {
+    type: string,
+    value: string,
+}
+
+export interface ISaveMenuParam {
+    title: string,
+    richTextList: IRichText[]
+}
+
+export interface ISaveMenuRes {
+    menuId: string,
+    _id: string | number,
+}

@@ -1,5 +1,6 @@
 import { wxPage } from "@core/amini/core"
 import { SuperPage, IBasePageData } from "@core/classes/SuperPage"
+import { WxCloudApiService } from "@mono-shared/services/wxcloud.api.service"
 import { IRichText } from "../../components/rich-text-list/rich-text-list"
 
 /** onload 参数, 所有都是string */
@@ -25,6 +26,11 @@ type LoadParams = Record<keyof ILoadParams, string>
  */
 @wxPage()
 class PurePagerWrapper extends SuperPage<IData> implements Page.PageInstance<IData> {
+  constructor(
+    private wxCloudApiService: WxCloudApiService,
+  ) {
+    super()
+  }
   public data = {
     // 富文本列表
     richTextList: [
@@ -39,10 +45,6 @@ class PurePagerWrapper extends SuperPage<IData> implements Page.PageInstance<IDa
     ],
     title: ""
   } as IData
-
-  constructor() {
-    super()
-  }
 
   /** DELETE: 注意，onLoad onShow onReady onHide onUnload 都要在第一行调用 super.onXX */
 
@@ -82,7 +84,16 @@ class PurePagerWrapper extends SuperPage<IData> implements Page.PageInstance<IDa
    * @param event 
    */
   public handlePublish(event: WXEvent): void {
+    console.log("handlePublish", event, "11");
     
+    const {title, richTextList} = this.data
+    this.wxCloudApiService.saveMenu({
+      title,
+      richTextList
+    }).subscribe(res => {
+      console.log("res", res);
+      
+    })
   }
 
 }

@@ -23,7 +23,7 @@ class ShiMieHaoApp implements App.AppInstance  {
     // 初始化云环境
     wx.cloud.init()
     // 检查云函数的最新状态
-    this.cloudCacheService.getCloudLatestUpdateTimes()
+    // this.cloudCacheService.getCloudLatestUpdateTimes()
   }
 
 }
